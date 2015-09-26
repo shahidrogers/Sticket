@@ -43,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
         EditText text2 = (EditText) findViewById(R.id.pwTextField);
         EditText text3 = (EditText) findViewById(R.id.emailTextField);
 
-        String username = text1.getText().toString();
+        final String username = text1.getText().toString();
         String password = text2.getText().toString();
         String email = text3.getText().toString();
 
@@ -57,6 +57,7 @@ public class SignUpActivity extends AppCompatActivity {
         user.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e == null) {
+                    UserObj.getInstance().setUsername(username);
                     startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                     SignUpActivity.this.finish();
                 } else {

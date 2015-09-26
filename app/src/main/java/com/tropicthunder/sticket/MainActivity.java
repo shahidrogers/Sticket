@@ -264,29 +264,37 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         //int hours = hourPick.getValue();
 
-        //do parse shit here...?
-
+        //do parse shit here...
         if(progress==0){
             new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("Oops!")
                     .setContentText("Please select the number of hours you wish to park for before making payment")
-                    .setConfirmText("Okay")
+                    .setConfirmText("Ok")
                     .show();
         }else{
-            new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                    .setTitleText("Are you sure?")
-                    .setContentText("Transactions are non-refundable")
-                    .setConfirmText("Yes, proceed")
-                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                        @Override
-                        public void onClick(SweetAlertDialog sDialog) {
-                            sDialog.dismissWithAnimation();
-                            payBtnOnClick();
-                            changeLayoutToPaid();
-                            updateCredit();
-                        }
-                    })
-                    .show();
+            //make sure there is sufficient credit before deduction
+            if((calc>creditValue)==false && creditValue!=0){
+                new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Are you sure?")
+                        .setContentText("Transactions are non-refundable")
+                        .setConfirmText("Yes, proceed")
+                        .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                            @Override
+                            public void onClick(SweetAlertDialog sDialog) {
+                                sDialog.dismissWithAnimation();
+                                payBtnOnClick();
+                                changeLayoutToPaid();
+                                updateCredit();
+                            }
+                        })
+                        .show();
+            }else{
+                new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+                        .setTitleText("Oops!")
+                        .setContentText("Insufficient credit balance")
+                        .setConfirmText("Ok")
+                        .show();
+            }
         }
     }
 
@@ -357,7 +365,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     object.put("credit", creditValue[0] - calc);
                     object.saveInBackground();
 
-                    //do stuff to relativeLayout -> change to countdown??
+                    //update credit balance??
+                    updateCredit();
 
                 } else {
                     // Something went wrong.
@@ -368,6 +377,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     }
 
     public void changeLayoutToPaid(){
+        //update credit bal
+        updateCredit();
+
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.payLayout);
         rl.setVisibility(View.GONE);
         RelativeLayout rlMain = (RelativeLayout) findViewById(R.id.paidLayout);
@@ -376,10 +388,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         //show ticket expiry
         TextView expiryTxt = (TextView) findViewById(R.id.dateTxt);
         expiryTxt.setText(end.toString());
-
-        //update credit bal
-        updateCredit();
-
     }
 
     public void changeLayoutToMain(View view){
