@@ -81,7 +81,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     private double calc;
 
     //date object for end of parking ticket
-    private Date end;
+    private Date end = new Date();
+
+    private int noOfHours2;
 
     //loading refresher
     SweetAlertDialog pDialog;
@@ -325,26 +327,89 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     public void payBtnOnClick(){
         TextView creditTxt = (TextView) findViewById(R.id.creditTxt);
-        TextView locationTxt = (TextView) findViewById(R.id.addressTxt);
+        final TextView locationTxt = (TextView) findViewById(R.id.addressTxt);
         TextView noOfHoursTxt = (TextView) findViewById(R.id.noOfHrsTxt);
         double credit = Double.parseDouble(creditTxt.getText().toString());
-        Integer noOfHours = Integer.parseInt(noOfHoursTxt.getText().toString());
+        final Integer noOfHours = Integer.parseInt(noOfHoursTxt.getText().toString());
+        noOfHours2 = noOfHours;
 
-        //push parking row entry to db
-        ParseObject parking = new ParseObject("Parking");
-        parking.put("parkLocation", locationTxt.getText().toString());
-        Date current = new Date();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Parking");
+        // Specify the object id
+        query.whereEqualTo("username", UserObj.getInstance().getUsername());
+        query.getFirstInBackground(new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject object, com.parse.ParseException e) {
+                if (object != null) {
+                    // The query was successful.
+                    Date endTime = object.getDate("parkEndDateAndTime");
+                    Date currentTime = new Date();
 
-        parking.put("parkDateAndTime", current);
+                    Log.d("endtime:", endTime.toString());
 
-        parking.put("username", UserObj.getInstance().getUsername());
+                    if (currentTime.after(endTime)){
+                        //purchase new ticket
 
-        end = new Date();
-        end.setTime(current.getTime() + (noOfHours * 3600000));
-        parking.put("parkEndDateAndTime", end);
+                        //push parking row entry to db
+                        ParseObject parking = new ParseObject("Parking");
+                        parking.put("parkLocation", locationTxt.getText().toString());
+                        Date current = new Date();
 
-        //push data to cloud
-        parking.saveInBackground();
+                        parking.put("parkDateAndTime", current);
+
+                        parking.put("username", UserObj.getInstance().getUsername());
+
+                        Date end2 = new Date();
+                        end2.setTime(current.getTime() + (noOfHours * 3600000));
+                        parking.put("parkEndDateAndTime", end2);
+                        end.setTime(end2.getTime());
+                        Log.d("Current Time:", end2.toString());
+
+                        //push data to cloud
+                        parking.saveInBackground();
+                    } else {
+                        //extend time of current ticket
+                        Date current = object.getDate("parkEndDateAndTime");
+
+                        Date end4 = new Date();
+                        end4.setTime(current.getTime() + (noOfHours * 3600000));
+                        object.put("parkEndDateAndTime", end4);
+                        Log.d("Current Time:", end4.toString());
+                        end.setTime(end4.getTime());
+                        object.saveInBackground();
+
+                    }
+
+
+
+                } else {
+                    // Ticket record does not exist yet
+                    ParseObject parking = new ParseObject("Parking");
+                    parking.put("parkLocation", locationTxt.getText().toString());
+                    Date current = new Date();
+
+                    parking.put("parkDateAndTime", current);
+
+                    parking.put("username", UserObj.getInstance().getUsername());
+
+                    Date end3 = new Date();
+                    end3.setTime(current.getTime() + (noOfHours * 3600000));
+                    parking.put("parkEndDateAndTime", end3);
+                    Log.d("Current Time:", end3.toString());
+                    end.setTime(end3.getTime());
+
+                    //push data to cloud
+                    parking.saveInBackground();
+                }
+            }
+
+        });
+
+
+
+
+
+
+
 
         //update credit balance
         updateCredit();
@@ -354,10 +419,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         final double[] creditValue = new double[1];
 
         // Specify which class to query
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
+        ParseQuery<ParseObject> query2 = ParseQuery.getQuery("_User");
         // Specify the object id
-        query.whereEqualTo("username", UserObj.getInstance().getUsername());
-        query.getFirstInBackground(new GetCallback<ParseObject>() {
+        query2.whereEqualTo("username", UserObj.getInstance().getUsername());
+        query2.getFirstInBackground(new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
                 if (object != null) {
                     // The query was successful.
@@ -386,8 +451,35 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         rlMain.setVisibility(View.VISIBLE);
 
         //show ticket expiry
-        TextView expiryTxt = (TextView) findViewById(R.id.dateTxt);
-        expiryTxt.setText(end.toString());
+        final TextView expiryTxt = (TextView) findViewById(R.id.dateTxt);
+
+        // Specify which class to query
+        ParseQuery<ParseObject> query2 = ParseQuery.getQuery("Parking");
+        // Specify the object id
+        query2.whereEqualTo("username", UserObj.getInstance().getUsername());
+        query2.orderByDescending("parkEndDateAndTime");
+        Date[] endDateAndTime = {new Date()};
+
+        query2.getFirstInBackground(new GetCallback<ParseObject>() {
+            public void done(ParseObject object, ParseException e) {
+                if (object != null) {
+                    // The query was successful.
+                    Log.d("uaqsgfiquf time", object.getDate("parkEndDateAndTime").toString());
+                    //endDateAndTime[0].setTime(object.getDate("parkEndDateAndTime").getTime());
+                    expiryTxt.setText(object.getDate("parkEndDateAndTime").toString());
+
+                } else {
+                    // Something went wrong
+                    Date end = new Date();
+                    end.setTime(end.getTime()+(noOfHours2*3600000));
+                    expiryTxt.setText(end.toString());
+                    Log.d("Error", e.toString());
+                }
+            }
+        });
+
+        //Log.d("End time: ", endDateAndTime[0].toString());
+        //expiryTxt.setText(endDateAndTime[0].toString());
     }
 
     public void changeLayoutToMain(View view){
