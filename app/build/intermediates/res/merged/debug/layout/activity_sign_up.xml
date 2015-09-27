@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.tropicthunder.sticket.SignUpActivity">
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="160sp"
+        android:src="@drawable/sticket_splash" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unTextField"
+        android:inputType="textCapCharacters"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/imageView1"
+        android:layout_below="@+id/imageView1"
+        android:hint="Car Number Plate"
+        android:layout_marginBottom="10sp"
+        android:layout_marginTop="10sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/pwTextField"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/unTextField"
+        android:layout_below="@+id/unTextField"
+        android:hint="Password"
+        android:layout_marginBottom="10sp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailTextField"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/pwTextField"
+        android:layout_below="@+id/pwTextField"
+        android:hint="E-mail Address"
+        android:layout_marginBottom="10sp" />
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:spb_sections_count="10"
+        app:spb_color="#998CA5"
+        app:spb_speed="2.0"
+        app:spb_stroke_width="3dp"
+        app:spb_stroke_separator_length="6dp"
+        app:spb_reversed="false"
+        app:spb_mirror_mode="false"
+        app:spb_progressiveStart_activated="false"
+        app:spb_progressiveStart_speed="1.5"
+        app:spb_progressiveStop_speed="3.4"
+        android:paddingTop="10sp"
+        android:id="@+id/progressView"
+        android:progress="0"
+        android:paddingLeft="10sp"
+        android:paddingRight="10sp"
+        android:visibility="invisible"
+        android:layout_below="@+id/emailTextField"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/button3"
+        android:onClick="signupOnClick"
+        android:paddingTop="10sp"
+        android:layout_below="@+id/progressView"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/progressView" />
+
+</RelativeLayout>
+<!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/src/main/res/layout/activity_sign_up.xml -->
