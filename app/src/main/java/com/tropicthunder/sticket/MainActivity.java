@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         MyLocation myLocation = new MyLocation();
         myLocation.getLocation(this, locationResult);
 
-        /* OLD LOCATION MANAGER CODE
+        /* OLD LOCATION MANAGER CODE (slower)
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this); //casted parameter
         */
