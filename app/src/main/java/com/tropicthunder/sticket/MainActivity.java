@@ -45,6 +45,8 @@ import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
+import static com.tropicthunder.sticket.LocationAddress.*;
+
 public class MainActivity extends AppCompatActivity implements LocationListener {
 
     //GPS and MAP stuff
@@ -94,7 +96,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         setContentView(R.layout.activity_main);
 
         actionBar = getSupportActionBar();
-        actionBar.setTitle("Sticket");
+        if (actionBar != null) {
+            actionBar.setTitle("Sticket");
+        }
 
         //loading bar
         pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
@@ -123,9 +127,42 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 .findFragmentById(R.id.map)).getMap();
         map.getUiSettings().setScrollGesturesEnabled(false);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(3.1333,101.7000), 5.0f));
+
         //start locationManager
+        MyLocation.LocationResult locationResult = new MyLocation.LocationResult(){
+            @Override
+            public void gotLocation(Location location){
+                //Got the location!
+                latitude = location.getLatitude();
+                longitude = location.getLongitude();
+
+                //change status to current address
+                LocationAddress locationAddress = new LocationAddress();
+                getAddressFromLocation(latitude, longitude,
+                        getApplicationContext(), new GeocoderHandler());
+
+                //add marker to map and zoom to location
+                if(!markerAdded){ //ONLY IF MARKER NOT YET ADDED THE FIRST TIME
+                    onMapReady(map);
+                    //locationManager.removeUpdates(this); //stop GPS
+                    markerAdded = true;
+                }
+
+                //indicate readyness to proceed
+                //actionBar.setTitle("Ready to go, " + username); //change title
+                payBtn.setProgress(0); //change button readyness
+                //hide loading bar
+                pDialog.hide();
+                seek.setVisibility(View.VISIBLE);
+            }
+        };
+        MyLocation myLocation = new MyLocation();
+        myLocation.getLocation(this, locationResult);
+
+        /* OLD LOCATION MANAGER CODE (slower)
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this); //casted parameter
+        */
 
         //no of hours + seekbar stuff~~~~~~~~
         seek = (SeekBar) findViewById(R.id.seekBar);
@@ -180,11 +217,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         //change status to current address
 
         LocationAddress locationAddress = new LocationAddress();
-        locationAddress.getAddressFromLocation(latitude, longitude,
+        getAddressFromLocation(latitude, longitude,
                 getApplicationContext(), new GeocoderHandler());
 
         //add marker to map and zoom to location
-        if(markerAdded==false){ //ONLY IF MARKER NOT YET ADDED THE FIRST TIME
+        if(!markerAdded){ //ONLY IF MARKER NOT YET ADDED THE FIRST TIME
             onMapReady(map);
             locationManager.removeUpdates(this); //stop GPS
             markerAdded = true;
@@ -208,10 +245,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         LatLng userLocation = new LatLng(latitude, longitude);
 
-        Marker davao = map.addMarker(new MarkerOptions().position(userLocation).title(username).snippet(""));
-        davao.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.car));
+        Marker carLocation = map.addMarker(new MarkerOptions().position(userLocation).title(username).snippet(""));
+        carLocation.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.car));
 
-        // zoom in the camera to Davao city
+        // zoom in the camera to car location
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 16));
 
         // animate the zoom process
@@ -223,14 +260,14 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
         startActivity(intent);
-        Toast.makeText(getBaseContext(), "Gps is turned off!! ",
+        Toast.makeText(getBaseContext(), "GPS is off! ",
                 Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onProviderEnabled(String provider) {
 
-        Toast.makeText(getBaseContext(), "Gps is turned on!! ",
+        Toast.makeText(getBaseContext(), "GPS is on! ",
                 Toast.LENGTH_SHORT).show();
     }
 
@@ -279,7 +316,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     .show();
         }else{
             //make sure there is sufficient credit before deduction
-            if((calc>creditValue)==false && creditValue!=0){
+            if(!(calc > creditValue) && creditValue!=0){
                 new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                         .setTitleText("Are you sure?")
                         .setContentText("Transactions are non-refundable")
