@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/src/main/res/values/arrays.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/src/main/res/values/arrays.xml -->
     <eat-comment/>
     <string-array name="values">
         <item>1</item>
@@ -8,7 +8,7 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -21,12 +21,12 @@
     <bool name="abc_config_allowActionMenuItemTextWithIcon">false</bool>
     <bool name="abc_config_closeDialogWhenTouchOutside">true</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <bool name="spb_default_mirror_mode">false</bool>
     <bool name="spb_default_progressiveStart_activated">false</bool>
     <bool name="spb_default_reversed">false</bool>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#7fa87f</color>
@@ -38,11 +38,11 @@
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
     <color name="background_material_light">#ffeeeeee</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="blue_btn_bg_color">#AEDEF4</color>
     <color name="blue_btn_bg_pressed_color">#96BFD2</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -52,15 +52,15 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="button_text_color">#FFFFFF</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="colorAccent">#409cff</color>
     <color name="colorPrimary">#3f6ab5</color>
     <color name="colorPrimaryDark">#30559f</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/common_colors.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/common_colors.xml -->
     <eat-comment/>
     <color name="common_action_bar_splitter">#d2d2d2</color>
     <color name="common_signin_btn_dark_text_default">@android:color/white</color>
@@ -72,7 +72,7 @@
     <color name="common_signin_btn_light_text_disabled">#FFAAAAAA</color>
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="cpb_blue">#ff0099cc</color>
     <color name="cpb_blue_dark">#ff00719b</color>
@@ -82,19 +82,19 @@
     <color name="cpb_red">#ffff4444</color>
     <color name="cpb_red_dark">#ffcd3a3a</color>
     <color name="cpb_white">@android:color/white</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="error_stroke_color">#F27474</color>
     <color name="float_transparent">#00000000</color>
     <color name="gray_btn_bg_color">#D0D0D0</color>
     <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
@@ -102,34 +102,34 @@
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
     <color name="link_text_material_dark">@color/material_deep_teal_200</color>
     <color name="link_text_material_light">@color/material_deep_teal_500</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_80">#ff37474f</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_800">#ff37474f</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_90">#ff263238</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_900">#ff263238</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_95">#ff21272b</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="material_blue_grey_950">#ff21272b</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="material_deep_teal_20">#ff80cbc4</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="material_deep_teal_200">#ff80cbc4</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="material_deep_teal_50">#ff009688</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="material_deep_teal_500">#ff009688</color>
     <color name="primary_dark_material_dark">#ff000000</color>
@@ -140,11 +140,11 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="red_btn_bg_color">#DD6B55</color>
     <color name="red_btn_bg_pressed_color">#CD5B55</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#4dffffff</color>
     <color name="ripple_material_light">#1f000000</color>
@@ -152,24 +152,24 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="spb_default_color">#33b5e5</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="success_stroke_color">#A5DC86</color>
     <color name="sweet_dialog_bg_color">#FFFFFF</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="text_color">#575757</color>
     <color name="trans_success_stroke_color">#33A5DC86</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_colors.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_colors.xml -->
     <eat-comment/>
     <color name="wallet_bright_foreground_disabled_holo_light">#ffb2b2b2</color>
     <color name="wallet_bright_foreground_holo_dark">#fff3f3f3</color>
@@ -184,7 +184,7 @@
     <color name="wallet_hint_foreground_holo_light">#808080</color>
     <color name="wallet_holo_blue_light">#ff33b5e5</color>
     <color name="wallet_link_text_light">#0000ee</color>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <color name="warning_stroke_color">#F8BB86</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
@@ -221,7 +221,7 @@
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
     <declare-styleable name="WalletFragmentOptions"><attr format="enum" name="appTheme"><enum name="holo_dark" value="0"/><enum name="holo_light" value="1"/></attr><attr format="enum" name="environment"><enum name="production" value="1"/><enum name="sandbox" value="0"/><enum name="strict_sandbox" value="2"/></attr><attr format="reference" name="fragmentStyle"/><attr format="enum" name="fragmentMode"><enum name="buyButton" value="1"/><enum name="selectionDetails" value="2"/></attr></declare-styleable>
     <declare-styleable name="WalletFragmentStyle"><attr format="dimension" name="buyButtonHeight"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="dimension" name="buyButtonWidth"><enum name="match_parent" value="-1"/><enum name="wrap_content" value="-2"/></attr><attr format="enum" name="buyButtonText"><enum name="buy_with_google" value="1"/><enum name="buy_now" value="2"/><enum name="book_now" value="3"/><enum name="donate_with_google" value="4"/></attr><attr format="enum" name="buyButtonAppearance"><enum name="classic" value="1"/><enum name="grayscale" value="2"/><enum name="monochrome" value="3"/></attr><attr format="reference" name="maskedWalletDetailsTextAppearance"/><attr format="reference" name="maskedWalletDetailsHeaderTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsBackground"/><attr format="reference" name="maskedWalletDetailsButtonTextAppearance"/><attr format="reference|color" name="maskedWalletDetailsButtonBackground"/><attr format="color" name="maskedWalletDetailsLogoTextColor"/><attr format="enum" name="maskedWalletDetailsLogoImageType"><enum name="classic" value="1"/><enum name="monochrome" value="2"/></attr></declare-styleable>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
@@ -283,18 +283,18 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="alert_width">290dp</dimen>
     <dimen name="common_circle_width">3dp</dimen>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="cpb_stroke_width">4dp</dimen>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -305,14 +305,14 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="progress_circle_radius">34dp</dimen>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="spb_default_stroke_separator_length">4dp</dimen>
     <dimen name="spb_default_stroke_width">4dp</dimen>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -328,20 +328,20 @@
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/version.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/version.xml -->
     <eat-comment/>
     <integer name="google_play_services_version">6587000</integer>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <integer name="spb_default_interpolator">0</integer>
     <integer name="spb_default_sections_count">4</integer>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <string name="LOADING">Loading...</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -360,13 +360,13 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="accept">Accept</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Sticket</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/common_strings.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/common_strings.xml -->
     <eat-comment/>
     <string name="common_android_wear_notification_needs_update_text">An application requires an update to the Android Wear app.</string>
     <string name="common_android_wear_update_text">This app won\'t run unless you update the Android Wear app.</string>
@@ -396,23 +396,23 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="create_calendar_message">Allow Ad to create a calendar event?</string>
     <string name="create_calendar_title">Create calendar event</string>
     <string name="decline">Decline</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
     <eat-comment/>
     <string name="define_circularprogressbutton">circularprogressbutton</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <string name="define_smoothprogressbar"/>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_default_title">Here\'s a message!</string>
     <string name="dialog_ok">OK</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.dmytrodanylyk.circular-progress-button/library/1.1.3/res/values/values.xml -->
     <eat-comment/>
     <string name="library_circularprogressbutton_author">Dmytro Danylyk</string>
     <string name="library_circularprogressbutton_authorWebsite">http://dmytrodanylyk.com/</string>
@@ -423,7 +423,7 @@
     <string name="library_circularprogressbutton_libraryWebsite">http://dmytrodanylyk.com/pages/portfolio/circular-progress-button.html</string>
     <string name="library_circularprogressbutton_licenseId">mit</string>
     <string name="library_circularprogressbutton_repositoryLink">https://github.com/dmytrodanylyk/circular-progress-button</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <string name="library_smoothprogressbar_author">Antoine Merle</string>
     <string name="library_smoothprogressbar_authorWebsite">https://github.com/castorflex</string>
@@ -435,23 +435,23 @@
     <string name="library_smoothprogressbar_licenseId">apache_2_0</string>
     <string name="library_smoothprogressbar_repositoryLink">https://github.com/castorflex/SmoothProgressBar.git</string>
     <item format="float" name="spb_default_speed" type="string">1</item>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -459,7 +459,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1516,7 +1516,7 @@
     <style name="RtlOverlay.Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation">
         <item name="android:paddingLeft">@dimen/abc_action_bar_navigation_padding_start_material</item>
     </style>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="SPB" parent="android:Widget.ProgressBar.Horizontal">
     </style>
@@ -1530,7 +1530,7 @@
         <item name="spb_mirror_mode">@bool/spb_default_mirror_mode</item>
         <item name="spb_interpolator">@integer/spb_default_interpolator</item>
     </style>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
@@ -1621,7 +1621,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_iap_style.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_iap_style.xml -->
     <eat-comment/>
     <style name="Theme.IAPTheme" parent="android:Theme">
     <item name="android:windowIsTranslucent">true</item>
@@ -1631,19 +1631,19 @@
     <item name="android:windowIsFloating">true</item>
     <item name="android:backgroundDimEnabled">false</item>
   </style>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/1.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Theme.SmoothProgressBarDefaults" parent="android:Theme">
         <item name="spbStyle">@style/SmoothProgressBar</item>
     </style>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Dark" parent="Base.ThemeOverlay.AppCompat.Dark"/>
     <style name="ThemeOverlay.AppCompat.Dark.ActionBar" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="ThemeOverlay.AppCompat.Light" parent="Base.ThemeOverlay.AppCompat.Light"/>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_styles.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_styles.xml -->
     <eat-comment/>
     <style name="WalletFragmentDefaultButtonTextAppearance">
         <item name="android:textColor">@color/wallet_primary_text_holo_light</item>
@@ -1677,7 +1677,7 @@
         <item name="maskedWalletDetailsLogoTextColor">@color/wallet_bright_foreground_holo_dark</item>
         <item name="maskedWalletDetailsLogoImageType">classic</item>
     </style>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values/values.xml -->
     <eat-comment/>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
@@ -1769,7 +1769,7 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="RtlOverlay.Widget.AppCompat.Toolbar.Button.Navigation"/>
-    <!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/res/values/values.xml -->
     <eat-comment/>
     <style name="alert_dialog" parent="android:Theme.Dialog">
         <item name="android:windowIsFloating">true</item>

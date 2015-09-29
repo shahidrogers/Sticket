@@ -107,7 +107,8 @@
             android:layout_below="@+id/seekBar"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="8sp" />
+            android:layout_marginTop="8sp"
+            android:paddingTop="5sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,7 +119,7 @@
             android:text="0"
             android:textSize="35sp"
             android:textStyle="bold"
-            android:layout_below="@+id/textView2"
+            android:layout_alignTop="@+id/seekBar"
             android:layout_alignParentEnd="true" />
 
         <SeekBar
@@ -130,7 +131,8 @@
             android:visibility="invisible"
             android:layout_below="@+id/textView2"
             android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/noOfHrsTxt" />
+            android:layout_toStartOf="@+id/noOfHrsTxt"
+            android:paddingBottom="10sp" />
 
     </RelativeLayout>
 
@@ -163,7 +165,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="&lt;expiry>"
+            android:text="Fetching ticket..."
             android:id="@+id/dateTxt"
             android:textStyle="bold"
             android:textColor="#a00000"
@@ -175,7 +177,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Purchase new ticket"
+            android:text="Extend ticket time"
             android:id="@+id/purchaseNewBtn"
             android:layout_below="@+id/dateTxt"
             android:layout_alignParentStart="true"
@@ -219,4 +221,4 @@
         android:layout_marginBottom="10sp" />
 
 </RelativeLayout>
-<!-- From: file:/Users/shahidrogers/Desktop/Sticket/app/src/main/res/layout/activity_main.xml -->
+<!-- From: file:/C:/Users/Bryan-hAdEsFactor-/Desktop/Sticket/app/src/main/res/layout/activity_main.xml -->
