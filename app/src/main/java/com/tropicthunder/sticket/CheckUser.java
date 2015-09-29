@@ -9,17 +9,10 @@ import com.parse.ParseUser;
 
 public class CheckUser extends AppCompatActivity {
 
-    public static final String YOUR_APPLICATION_ID = "3zUnInahebnSfVPGbrLIBLflh1yY5Vx8xHq4EmHe";
-    public static final String YOUR_CLIENT_KEY = "BUIxAMInkYrB3Wql8VFFwSlTap6UXrGUdRid9VGq";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_user);
-
-        // Add your initialization code here
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, YOUR_APPLICATION_ID, YOUR_CLIENT_KEY);
 
         Intent intent;
         ParseUser currentUser = ParseUser.getCurrentUser();
