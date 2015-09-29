@@ -239,10 +239,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         LatLng userLocation = new LatLng(latitude, longitude);
 
-        Marker davao = map.addMarker(new MarkerOptions().position(userLocation).title(username).snippet(""));
-        davao.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.car));
+        Marker carLocation = map.addMarker(new MarkerOptions().position(userLocation).title(username).snippet(""));
+        carLocation.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.car));
 
-        // zoom in the camera to Davao city
+        // zoom in the camera to car location
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 16));
 
         // animate the zoom process
