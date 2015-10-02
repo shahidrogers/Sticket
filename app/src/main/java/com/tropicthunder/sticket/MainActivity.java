@@ -24,6 +24,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dd.CircularProgressButton;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.PendingResult;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.FusedLocationProviderApi;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -47,14 +54,42 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 import static com.tropicthunder.sticket.LocationAddress.*;
 
-public class MainActivity extends AppCompatActivity implements LocationListener {
+public class MainActivity extends AppCompatActivity implements com.google.android.gms.location.LocationListener, GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener{
 
     //GPS and MAP stuff
-    private LocationManager locationManager;
+    //private LocationManager locationManager;
     private double latitude = 0, longitude = 0;
     private GoogleMap map;
     //make sure that marker is only added once
     private boolean markerAdded = false;
+
+    /**
+     * The desired interval for location updates. Inexact. Updates may be more or less frequent.
+     */
+    public static final long UPDATE_INTERVAL_IN_MILLISECONDS = 10000;
+
+    /**
+     * The fastest rate for active location updates. Exact. Updates will never be more frequent
+     * than this value.
+     */
+    public static final long FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS =
+            UPDATE_INTERVAL_IN_MILLISECONDS / 2;
+
+    /**
+     * Provides the entry point to Google Play services.
+     */
+    private GoogleApiClient mGoogleApiClient;
+
+    /**
+     * Stores parameters for requests to the FusedLocationProviderApi.
+     */
+    private LocationRequest mLocationRequest;
+
+    /**
+     * Represents a geographical location.
+     */
+    private Location mCurrentLocation;
 
     //textview variables
     private TextView addressTxt;
@@ -111,9 +146,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         //get current username
         username = UserObj.getInstance().getUsername();
-        //TextView unTxt = (TextView) findViewById(R.id.unTxt);
-        //set username to show carplate number
-        //unTxt.setText(username);
 
         //set addressTxt textview variable
         addressTxt = (TextView) findViewById(R.id.addressTxt);
@@ -122,47 +154,16 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         payBtn = (CircularProgressButton) findViewById(R.id.payBtn);
         payBtn.setProgress(-1);
 
-        //initialise map + gps
+        //initialise map
         map = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
         map.getUiSettings().setScrollGesturesEnabled(false);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(3.1333,101.7000), 5.0f));
 
-        //start locationManager
-        MyLocation.LocationResult locationResult = new MyLocation.LocationResult(){
-            @Override
-            public void gotLocation(Location location){
-                //Got the location!
-                latitude = location.getLatitude();
-                longitude = location.getLongitude();
-
-                //change status to current address
-                LocationAddress locationAddress = new LocationAddress();
-                getAddressFromLocation(latitude, longitude,
-                        getApplicationContext(), new GeocoderHandler());
-
-                //add marker to map and zoom to location
-                if(!markerAdded){ //ONLY IF MARKER NOT YET ADDED THE FIRST TIME
-                    onMapReady(map);
-                    //locationManager.removeUpdates(this); //stop GPS
-                    markerAdded = true;
-                }
-
-                //indicate readyness to proceed
-                //actionBar.setTitle("Ready to go, " + username); //change title
-                payBtn.setProgress(0); //change button readyness
-                //hide loading bar
-                pDialog.hide();
-                seek.setVisibility(View.VISIBLE);
-            }
-        };
-        MyLocation myLocation = new MyLocation();
-        myLocation.getLocation(this, locationResult);
-
-        /* OLD LOCATION MANAGER CODE (slower)
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 2000, 1, this); //casted parameter
-        */
+        //new gps code
+        // Kick off the process of building a GoogleApiClient and requesting the LocationServices
+        // API.
+        buildGoogleApiClient();
 
         //no of hours + seekbar stuff~~~~~~~~
         seek = (SeekBar) findViewById(R.id.seekBar);
@@ -190,46 +191,74 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             }
         });
 
+    }
 
+    /**
+     * Builds a GoogleApiClient. Uses the {@code #addApi} method to request the
+     * LocationServices API.
+     */
+    protected synchronized void buildGoogleApiClient() {
+        //Log.i(TAG, "Building GoogleApiClient");
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+        createLocationRequest();
+    }
 
+    /**
+     * Sets up the location request. Android has two location request settings:
+     * {@code ACCESS_COARSE_LOCATION} and {@code ACCESS_FINE_LOCATION}. These settings control
+     * the accuracy of the current location. This sample uses ACCESS_FINE_LOCATION, as defined in
+     * the AndroidManifest.xml.
+     * <p/>
+     * When the ACCESS_FINE_LOCATION setting is specified, combined with a fast update
+     * interval (5 seconds), the Fused Location Provider API returns location updates that are
+     * accurate to within a few feet.
+     * <p/>
+     * These settings are appropriate for mapping applications that show real-time location
+     * updates.
+     */
+    protected void createLocationRequest() {
+        mLocationRequest = new LocationRequest();
 
+        // Sets the desired interval for active location updates. This interval is
+        // inexact. You may not receive updates at all if no location sources are available, or
+        // you may receive them slower than requested. You may also receive updates faster than
+        // requested if other applications are requesting location at a faster interval.
+        mLocationRequest.setInterval(UPDATE_INTERVAL_IN_MILLISECONDS);
 
+        // Sets the fastest rate for active location updates. This interval is exact, and your
+        // application will never receive updates faster than this value.
+        mLocationRequest.setFastestInterval(FASTEST_UPDATE_INTERVAL_IN_MILLISECONDS);
+
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
     @Override
     public void onLocationChanged(Location location) {
-
-        //String msg = "New Latitude: " + location.getLatitude()
-        //        + "New Longitude: " + location.getLongitude();
-        //Toast.makeText(getBaseContext(), msg, Toast.LENGTH_LONG).show();
-
+        //set lat and long location variables
         latitude = location.getLatitude();
         longitude = location.getLongitude();
 
-        //change status
-        /*
-        TextView statusTxt = (TextView) findViewById(R.id.textView);
-
-        statusTxt.setText("Latitude: " + latitude
-                + " Longitude: " + longitude);
-        */
-
         //change status to current address
-
         LocationAddress locationAddress = new LocationAddress();
         getAddressFromLocation(latitude, longitude,
                 getApplicationContext(), new GeocoderHandler());
 
         //add marker to map and zoom to location
-        if(!markerAdded){ //ONLY IF MARKER NOT YET ADDED THE FIRST TIME
+        if (!markerAdded) { //ONLY IF MARKER NOT YET ADDED THE FIRST TIME
             onMapReady(map);
-            locationManager.removeUpdates(this); //stop GPS
+            mGoogleApiClient.disconnect(); //stop GPS?
+            //locationManager.removeUpdates(this); //stop GPS
             markerAdded = true;
+
         }
 
-        //indicate readyness to proceed
+        //indicate readiness to proceed
         //actionBar.setTitle("Ready to go, " + username); //change title
-        payBtn.setProgress(0); //change button readyness
+        payBtn.setProgress(0); //change button to READY
         //hide loading bar
         pDialog.hide();
         seek.setVisibility(View.VISIBLE);
@@ -255,25 +284,83 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         map.animateCamera(CameraUpdateFactory.zoomTo(16), 2000, null);
     }
 
-    @Override
-    public void onProviderDisabled(String provider) {
+    protected void startLocationUpdates() {
+        PendingResult<Status> pendingResult = LocationServices.FusedLocationApi.requestLocationUpdates(
+                mGoogleApiClient, mLocationRequest, this);
+    }
 
-        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-        startActivity(intent);
-        Toast.makeText(getBaseContext(), "GPS is off! ",
-                Toast.LENGTH_SHORT).show();
+    /**
+     * Removes location updates from the FusedLocationApi.
+     */
+    protected void stopLocationUpdates() {
+        // It is a good practice to remove location requests when the activity is in a paused or
+        // stopped state. Doing so helps battery performance and is especially
+        // recommended in applications that request frequent location updates.
+
+        // The final argument to {@code requestLocationUpdates()} is a LocationListener
+        // (http://developer.android.com/reference/com/google/android/gms/location/LocationListener.html).
+        LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);
     }
 
     @Override
-    public void onProviderEnabled(String provider) {
-
-        Toast.makeText(getBaseContext(), "GPS is on! ",
-                Toast.LENGTH_SHORT).show();
+    protected void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
     }
 
     @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {
-        // TODO Auto-generated method stub
+    public void onResume() {
+        super.onResume();
+        // Within {@code onPause()}, we pause location updates, but leave the
+        // connection to GoogleApiClient intact.  Here, we resume receiving
+        // location updates if the user has requested them.
+
+        if (mGoogleApiClient.isConnected()) {
+            startLocationUpdates();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Stop location updates to save battery, but don't disconnect the GoogleApiClient object.
+        if (mGoogleApiClient.isConnected()) {
+            stopLocationUpdates();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        mGoogleApiClient.disconnect();
+
+        super.onStop();
+    }
+
+    /**
+     * Runs when a GoogleApiClient object successfully connects.
+     */
+    @Override
+    public void onConnected(Bundle connectionHint) {
+        // If the initial location was never previously requested, we use
+        // FusedLocationApi.getLastLocation() to get it. If it was previously requested, we store
+        // its value in the Bundle and check for it in onCreate(). We
+        // do not request it again unless the user specifically requests location updates by pressing
+        // the Start Updates button.
+        //
+        // Because we cache the value of the initial location in the Bundle, it means that if the
+        // user launches the activity,
+        // moves to a new location, and then changes the device orientation, the original location
+        // is displayed as the activity is re-created.
+        startLocationUpdates();
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
 
     }
 
