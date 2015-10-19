@@ -58,6 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void done(ParseException e) {
                 if (e == null) {
                     UserObj.getInstance().setUsername(username);
+                    UserObj.getInstance().setParkingStatus(false);
                     startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                     SignUpActivity.this.finish();
                 } else {

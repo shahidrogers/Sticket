@@ -165,6 +165,8 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         // API.
         buildGoogleApiClient();
 
+
+
         //no of hours + seekbar stuff~~~~~~~~
         seek = (SeekBar) findViewById(R.id.seekBar);
         noOfHrs = (TextView) findViewById(R.id.noOfHrsTxt);
@@ -190,6 +192,15 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
                 payBtn.setText("Pay RM" + fee.format(calc));
             }
         });
+
+        //check if user has a running parking ticket
+        if (UserObj.getInstance().getParkingStatus() == true){
+            changeLayoutToPaid();
+        }
+
+        Log.d("Oncreate Status :", Boolean.toString(UserObj.getInstance().getParkingStatus()));
+
+
 
     }
 
@@ -306,6 +317,13 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
     protected void onStart() {
         super.onStart();
         mGoogleApiClient.connect();
+
+        //check if user has a running parking ticket
+        if (UserObj.getInstance().getParkingStatus() == true){
+            changeLayoutToPaid();
+        }
+
+        Log.d("Onstart Status :", Boolean.toString(UserObj.getInstance().getParkingStatus()));
     }
 
     @Override
@@ -318,6 +336,13 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         if (mGoogleApiClient.isConnected()) {
             startLocationUpdates();
         }
+
+        //check if user has a running parking ticket
+        if (UserObj.getInstance().getParkingStatus() == true){
+            changeLayoutToPaid();
+        }
+
+        Log.d("Onresume Status :", Boolean.toString(UserObj.getInstance().getParkingStatus()));
     }
 
     @Override
@@ -383,6 +408,8 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
     public void logOut(View view){
         ParseUser.logOut();
         ParseUser currentUser = ParseUser.getCurrentUser();
+
+        UserObj.getInstance().setParkingStatus(false);
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
         MainActivity.this.finish();
     }
@@ -394,7 +421,7 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
 
         //int hours = hourPick.getValue();
 
-        //do parse shit here...
+        //do parse stuff here...
         if(progress==0){
             new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
                     .setTitleText("Oops!")
@@ -439,6 +466,7 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
         // Specify the object id
         query.whereEqualTo("username", UserObj.getInstance().getUsername());
+
         query.getFirstInBackground(new GetCallback<ParseObject>() {
             public void done(ParseObject user, ParseException e) {
                 if (user != null) {
@@ -447,7 +475,7 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
                     credit.setText(String.valueOf(fee.format(creditValue)));
                 } else {
                     // Something went wrong.
-                    Log.d("Shit went wrong", e.toString());
+                    Log.d("Stuff went wrong", e.toString());
                 }
             }
         });
@@ -464,16 +492,23 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Parking");
         // Specify the object id
         query.whereEqualTo("username", UserObj.getInstance().getUsername());
+
+        // Obtain the latest parking record of the current user
         query.getFirstInBackground(new GetCallback<ParseObject>() {
             @Override
             public void done(ParseObject object, com.parse.ParseException e) {
+
+                //Check if a record exists, if it does, check if should update or create new record
                 if (object != null) {
                     // The query was successful.
+                    // Get the ending date and time of parking record
                     Date endTime = object.getDate("parkEndDateAndTime");
                     Date currentTime = new Date();
 
                     Log.d("endtime:", endTime.toString());
 
+
+                    // Check if latest parking record is expired
                     if (currentTime.after(endTime)){
                         //purchase new ticket
 
@@ -503,6 +538,8 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
                         object.put("parkEndDateAndTime", end4);
                         Log.d("Current Time:", end4.toString());
                         end.setTime(end4.getTime());
+
+                        //push data to cloud
                         object.saveInBackground();
 
                     }
@@ -533,12 +570,6 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         });
 
 
-
-
-
-
-
-
         //update credit balance
         updateCredit();
 
@@ -552,8 +583,9 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         query2.whereEqualTo("username", UserObj.getInstance().getUsername());
         query2.getFirstInBackground(new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
+
                 if (object != null) {
-                    // The query was successful.
+                    // Update user records after deducting parking transaction
                     creditValue[0] = object.getDouble("credit");
                     object.put("credit", creditValue[0] - calc);
                     object.saveInBackground();
@@ -588,12 +620,11 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         query2.orderByDescending("parkEndDateAndTime");
         Date[] endDateAndTime = {new Date()};
 
+        // Get latest parking ticket to print ending date and time
         query2.getFirstInBackground(new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException e) {
                 if (object != null) {
                     // The query was successful.
-                    Log.d("uaqsgfiquf time", object.getDate("parkEndDateAndTime").toString());
-                    //endDateAndTime[0].setTime(object.getDate("parkEndDateAndTime").getTime());
                     expiryTxt.setText(object.getDate("parkEndDateAndTime").toString());
 
                 } else {
@@ -606,6 +637,7 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
             }
         });
 
+
         //Log.d("End time: ", endDateAndTime[0].toString());
         //expiryTxt.setText(endDateAndTime[0].toString());
     }
@@ -617,5 +649,4 @@ public class MainActivity extends AppCompatActivity implements com.google.androi
         rl.setVisibility(View.GONE);
 
     }
-
 }
